@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>OMRBranch</td>
+      <td>31 Mar 2023, 10:57</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.stepdefinition.Commonstep.user_should_verify_selected_filter_room_type_is_displayed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="36000000">0.036</td>
+              <td class="duration" data-value="36000000">0.036</td>
+              <td class="duration" data-value="36000000">0.036</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.Commonstep.user_should_verify_success_message_after_book_hotel_and_save_the_hotel_name(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="1087500000">1.087</td>
+              <td class="duration" data-value="1087500000">1.170</td>
+              <td class="duration" data-value="4350000000">4.350</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.Commonstep.user_should_verify_success_message_after_book_hotel_and_save_the_order_id(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="77666666">0.077</td>
+              <td class="duration" data-value="77666666">0.097</td>
+              <td class="duration" data-value="233000000">0.233</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.Commonstep.user_should_verify_success_message_after_login(java.lang.String)</td>
+              <td>13</td>
+              <td class="duration" data-value="4370230769">4.370</td>
+              <td class="duration" data-value="4370230769">5.704</td>
+              <td class="duration" data-value="56813000000">56.813</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.Commonstep.user_should_verify_success_message_after_select_hotel(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="912545454">0.912</td>
+              <td class="duration" data-value="912545454">1.347</td>
+              <td class="duration" data-value="10038000000">10.038</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.Commonstep.user_should_verify_the_booked_hotel_is_present()</td>
+              <td>1</td>
+              <td class="duration" data-value="34000000">0.034</td>
+              <td class="duration" data-value="34000000">0.034</td>
+              <td class="duration" data-value="34000000">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.HooksClass.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>14</td>
+              <td class="duration" data-value="748928571">0.748</td>
+              <td class="duration" data-value="748928571">0.790</td>
+              <td class="duration" data-value="10485000000">10.485</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.HooksClass.beforeScenario()</td>
+              <td>14</td>
+              <td class="duration" data-value="5518285714">5.518</td>
+              <td class="duration" data-value="5518285714">6.669</td>
+              <td class="duration" data-value="77256000000">1:17.256</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.user_is_on_the_omr_branch_hotel_page()</td>
+              <td>14</td>
+              <td class="duration" data-value="142857">0.000</td>
+              <td class="duration" data-value="142857">0.001</td>
+              <td class="duration" data-value="2000000">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.user_login_the(java.lang.String,java.lang.String)</td>
+              <td>13</td>
+              <td class="duration" data-value="390615384">0.390</td>
+              <td class="duration" data-value="390615384">0.492</td>
+              <td class="duration" data-value="5078000000">5.078</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.user_login_the_with_enter_key(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="316000000">0.316</td>
+              <td class="duration" data-value="316000000">0.316</td>
+              <td class="duration" data-value="316000000">0.316</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC1_LoginStep.user_should_verify_error_message_after_login(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="278000000">0.278</td>
+              <td class="duration" data-value="278000000">0.278</td>
+              <td class="duration" data-value="278000000">0.278</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_ExploreHotelsStep.user_clicks_search_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="244000000">0.244</td>
+              <td class="duration" data-value="244000000">0.244</td>
+              <td class="duration" data-value="244000000">0.244</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_ExploreHotelsStep.user_enter_all_field_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>9</td>
+              <td class="duration" data-value="1288222222">1.288</td>
+              <td class="duration" data-value="1288222222">1.594</td>
+              <td class="duration" data-value="11594000000">11.594</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_ExploreHotelsStep.user_enter_mandatory_field_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1451000000">1.451</td>
+              <td class="duration" data-value="1451000000">1.451</td>
+              <td class="duration" data-value="1451000000">1.451</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC2_ExploreHotelsStep.user_should_verify_error_message_after_no_options_select_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="333000000">0.333</td>
+              <td class="duration" data-value="333000000">0.333</td>
+              <td class="duration" data-value="333000000">0.333</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_SelectHotelStep.user_accept_the_alert_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="13000000">0.013</td>
+              <td class="duration" data-value="13000000">0.013</td>
+              <td class="duration" data-value="13000000">0.013</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_SelectHotelStep.user_click_the_radio_button_high_to_low()</td>
+              <td>1</td>
+              <td class="duration" data-value="99000000">0.099</td>
+              <td class="duration" data-value="99000000">0.099</td>
+              <td class="duration" data-value="99000000">0.099</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_SelectHotelStep.user_dismiss_the_alert_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="duration" data-value="12000000">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_SelectHotelStep.user_select_the_hotel()</td>
+              <td>5</td>
+              <td class="duration" data-value="82200000">0.082</td>
+              <td class="duration" data-value="82200000">0.100</td>
+              <td class="duration" data-value="411000000">0.411</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_SelectHotelStep.user_should_verify_decending_order()</td>
+              <td>1</td>
+              <td class="duration" data-value="234000000">0.234</td>
+              <td class="duration" data-value="234000000">0.234</td>
+              <td class="duration" data-value="234000000">0.234</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC3_SelectHotelStep.user_should_verify_hotel_name_ends_with(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="163000000">0.163</td>
+              <td class="duration" data-value="163000000">0.163</td>
+              <td class="duration" data-value="163000000">0.163</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_BookHotelStep.user_accept_the_alert()</td>
+              <td>3</td>
+              <td class="duration" data-value="14000000">0.014</td>
+              <td class="duration" data-value="14000000">0.016</td>
+              <td class="duration" data-value="42000000">0.042</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_BookHotelStep.user_add_gst_details_and(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="569333333">0.569</td>
+              <td class="duration" data-value="569333333">0.580</td>
+              <td class="duration" data-value="1708000000">1.708</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_BookHotelStep.user_add_guest_details_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="4135000000">4.135</td>
+              <td class="duration" data-value="4135000000">4.154</td>
+              <td class="duration" data-value="12405000000">12.405</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_BookHotelStep.user_add_payment_details_proceed_with_card_type(java.lang.String,io.cucumber.datatable.DataTable)</td>
+              <td>2</td>
+              <td class="duration" data-value="1646000000">1.646</td>
+              <td class="duration" data-value="1646000000">1.664</td>
+              <td class="duration" data-value="3292000000">3.292</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_BookHotelStep.user_add_special_request(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="259333333">0.259</td>
+              <td class="duration" data-value="259333333">0.274</td>
+              <td class="duration" data-value="778000000">0.778</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC4_BookHotelStep.user_select_upi_option_add_upi_id(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="776000000">0.776</td>
+              <td class="duration" data-value="776000000">0.776</td>
+              <td class="duration" data-value="776000000">0.776</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC5_MyBookingsStep.user_cancel_the_order_id()</td>
+              <td>1</td>
+              <td class="duration" data-value="5131000000">5.131</td>
+              <td class="duration" data-value="5131000000">5.131</td>
+              <td class="duration" data-value="5131000000">5.131</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC5_MyBookingsStep.user_navigate_into_my_booking_tabs()</td>
+              <td>1</td>
+              <td class="duration" data-value="1459000000">1.459</td>
+              <td class="duration" data-value="1459000000">1.459</td>
+              <td class="duration" data-value="1459000000">1.459</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC5_MyBookingsStep.user_should_verify_success_message_after_my_bookings_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1257000000">1.257</td>
+              <td class="duration" data-value="1257000000">1.257</td>
+              <td class="duration" data-value="1257000000">1.257</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>31</td>
+            <td>130</td>
+            <td class="duration">1.587</td>
+            <td class="duration">1:17.256</td>
+            <td class="duration">3:26.321</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
